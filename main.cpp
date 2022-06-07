@@ -1,18 +1,41 @@
 #include "Alunos.cpp"
 
+Alunos jDados()
+{
+    Alunos novo;
+    int a;
+    string b;
+    cout << "Digite um nome: ";
+    cin >> b;
+    novo.setNome(b);
+    cout << "Digite seu RA: ";
+    cin >> a;
+    novo.setRa(a);
+    cout << "Digite sua idade: ";
+    cin >> a;
+    novo.setIdade(a);
+    cout << "Digite o semestre atual: ";
+    cin >> a;
+    novo.setSemestre(a);
+
+    return(novo);
+
+}
+
 int main()
 {
     srand(time(0));
-    Alunos JJ(107820, "Jadson Lima", 25, 7) ;
+    Alunos Jogador;
+    Jogador = jDados();
     int escolha;
     int cont = 0;
     escolha = 150;
-    while(JJ.getDia() != "Sexta" && cont < 3)
+    while(Jogador.getDia() != "Sexta" && cont < 3)
         {
-            int horaAntiga=JJ.getHoras();
-            JJ.necessidade(horaAntiga);
-            horaAntiga=JJ.getHoras();
-            JJ.showStatus();
+            int horaAntiga=Jogador.getHoras();
+            Jogador.necessidade(horaAntiga);
+            horaAntiga=Jogador.getHoras();
+            Jogador.showStatus();
             cout <<"1- Beber agua" << endl;
             cout <<"2- Comer" << endl;
             cout << "3- Descansar"<<endl;
@@ -25,33 +48,33 @@ int main()
             switch(escolha)
             {
                 case 1:
-                    JJ.beberAgua();
+                    Jogador.beberAgua();
                     break;
                 case 2:
-                    JJ.comer();
+                    Jogador.comer();
                     break;
                 case 3:
-                    JJ.descansar();
+                    Jogador.descansar();
                     break;
                 case 4:
-                    JJ.estudar();
+                    Jogador.estudar();
                     break;
                 case 5:
-                    JJ.fazerProva();
+                    Jogador.fazerProva();
                     break;
                 case 6:
-                    JJ.sairAmigos();
+                    Jogador.sairAmigos();
                     break;
                 case 7:
-                    JJ.dormir();
+                    Jogador.dormir();
                     break;
             }
-            cont = JJ.controlador(cont);
+            cont = Jogador.controlador(cont);
             if(escolha == 0)
             {
                 break;
             }
-        JJ.necessidade(horaAntiga);
+        Jogador.necessidade(horaAntiga);
         }
     return 0;
 }

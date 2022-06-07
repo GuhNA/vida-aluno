@@ -2,6 +2,21 @@
 
 //Construtor parametrico.
 
+Alunos::Alunos()
+{
+    this->dia = "Sabado";
+	this->nota = 0;
+	this->energia = 100;
+	this->fome = 0;
+	this->sede = 0;
+	this->horas = 6;
+	this->estresse = 0;
+	this->diasSem = { "Sabado","Domingo", "Segunda", "Terca", "Quarta", "Quinta", "Sexta"};
+	this->trabalho = "fisico";
+	this->aprendizado = 0;
+	this->trabalhou = false;
+}
+
 Alunos::Alunos(int ra, string nome,
 			   int idade, int semestre)
 {

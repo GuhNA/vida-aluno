@@ -68,6 +68,8 @@ public:
 
 	//Construtores
 
+	Alunos();
+
 	Alunos(int ra, string nome,
 		int idade, int semestre);
 
